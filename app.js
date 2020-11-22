@@ -42,9 +42,16 @@ document.querySelector('.btn-hold').addEventListener('click',function(){
 
 	//2.update the user interface
 	document.querySelector('score-'+ activePlayer).textContent=scores[activePlayer];
-	//3. Check if the player won the game 
+	//3. Check if the player won the game
+	if(scores[activePlayer] >= 100){
+		document.querySelector('#name-'+ activePlayer).textContent='WINNER!';
+		document.querySelector('.dice').style.display='none';
+	}else{
+		nextPlayer();
+	}
+
 	// nextPlayer
-	nextPlayer();
+	
 
 });
 
